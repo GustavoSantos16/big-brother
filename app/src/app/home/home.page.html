@@ -1,0 +1,54 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<!-- <ion-button >Twitter</ion-button>
+    <ion-button">Youtube</ion-button>
+    <ion-button >G1</ion-button>
+    <ion-button >Instagram</ion-button> -->
+
+<ion-content [fullscreen]="true">
+
+  <h1 class="texto">Escolha uma das opções abaixo para acompanhar o BBB21 nas melhores redes sociais</h1>
+
+  <div class="container">
+    <div class="box" (click)="open('https://mobile.twitter.com/hashtag/bbb21')">
+      <div class="icon_container">
+        <img src="/assets/twitter.png">
+      </div>
+      <div class="texto">Twitter</div>
+    </div>
+
+    <div class="box" (click)="open('https://g1.globo.com/busca/?q=Bbb')">
+      <div class="icon_container">
+        <img src="/assets/g1.jpg">
+      </div>
+      <div class="texto">G1</div>
+    </div>
+
+    <div class="box" (click)="open('https://m.youtube.com/results?search_query=Bbb21')">
+      <div class="icon_container">
+        <img src="/assets/youtube.png">
+      </div>
+      <div class="texto">Youtube</div>
+    </div>
+
+    <div class="box" (click)="open('https://www.instagram.com/explore/tags/bbb21/')">
+      <div class="icon_container">
+        <img src="/assets/instagram.jpeg">
+      </div>
+      <div class="texto">Instagram</div>
+    </div>
+  </div>
+
+
+  <h4 class="texto" style="font-weight: 600;">Votar agora?</h4>
+  <div class="button_gshow" (click)="open('https://gshow.globo.com/realities/bbb/')">
+    <img src="/assets/gshow.svg">
+  </div>
+
+</ion-content>
