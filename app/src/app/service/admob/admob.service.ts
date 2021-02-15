@@ -23,12 +23,22 @@ export class AdmobService {
       autoShow: true, //,
       id: 'ca-app-pub-5874389801857370/7073302900',
     };
+    // android
+    // ca-app-pub-5874389801857370/7073302900
+    // ios
+    // ca-app-pub-5874389801857370/1276490241
     this.admobFree.banner.config(bannerConfig);
 
     this.admobFree.banner
       .prepare()
       .then(() => {
         console.log('banner prepare');
+        this.admobFree.banner
+          .show()
+          .then(() => {
+            console.log('banner show');
+          })
+          .catch((e) => console.error('show error', e));
 
         // success
       })
