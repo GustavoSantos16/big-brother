@@ -11,6 +11,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'admob',
+    loadChildren: () => import('./admob/admob.module').then( m => m.AdmobPageModule)
+  },
 ];
 
 @NgModule({
