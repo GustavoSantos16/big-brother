@@ -12,7 +12,7 @@ export class AdmobService {
       : 'ca-app-pub-5874389801857370/7073302900';
 
     let bannerConfig: AdMobFreeBannerConfig = {
-      isTesting: false, // Remove in production
+      isTesting: true, // Remove in production
       autoShow: true,
       size: 'SMART_BANNER',
       id: idBanner,

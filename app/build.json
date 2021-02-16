@@ -1,0 +1,11 @@
+{
+  "android": {
+    "release": {
+      "keystore": "app-release.keystore",
+      "storePassword": "lasminabbb21",
+      "alias": "keystore-release",
+      "password": "lasminabbb21",
+      "keystoreType": ""
+    }
+  }
+}
