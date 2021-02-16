@@ -11,7 +11,7 @@ export class AdmobPage implements OnInit {
 
   ngOnInit() {
     setTimeout(() => {
-      this.admobService.BannerAd();
+      this.admobService.bannerAd();
     }, 1000);
   }
 }

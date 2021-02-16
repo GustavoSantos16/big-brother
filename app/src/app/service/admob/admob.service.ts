@@ -1,27 +1,22 @@
 import { Injectable } from '@angular/core';
-import {
-  AdMobFree,
-  AdMobFreeBannerConfig,
-  AdMobFreeInterstitialConfig,
-} from '@ionic-native/admob-free/ngx';
+import { AdMobFree, AdMobFreeBannerConfig } from '@ionic-native/admob-free/ngx';
 import { Platform } from '@ionic/angular';
 
 @Injectable()
 export class AdmobService {
-  //Interstitial Ad's Configurations
-  interstitialConfig: AdMobFreeInterstitialConfig = {
-    isTesting: true,
-    autoShow: false,
-    id: 'ca-app-pub-5874389801857370/7073302900',
-  };
-
   constructor(private admobFree: AdMobFree, public platform: Platform) {}
 
-  BannerAd() {
+  async bannerAd() {
+    let idBanner = (await this.platform.is('ios'))
+      ? 'ca-app-pub-5874389801857370/1276490241'
+      : 'ca-app-pub-5874389801857370/7073302900';
+
+    console.log(idBanner);
+
     let bannerConfig: AdMobFreeBannerConfig = {
       isTesting: true, // Remove in production
       autoShow: true, //,
-      id: 'ca-app-pub-5874389801857370/7073302900',
+      id: idBanner,
     };
     // android
     // ca-app-pub-5874389801857370/7073302900
@@ -33,12 +28,14 @@ export class AdmobService {
       .prepare()
       .then(() => {
         console.log('banner prepare');
-        this.admobFree.banner
-          .show()
-          .then(() => {
-            console.log('banner show');
-          })
-          .catch((e) => console.error('show error', e));
+        // setTimeout(() => {
+        //   this.admobFree.banner
+        //     .show()
+        //     .then(() => {
+        //       console.log('banner show');
+        //     })
+        //     .catch((e) => console.error('show error', e));
+        // }, 1000);
 
         // success
       })
